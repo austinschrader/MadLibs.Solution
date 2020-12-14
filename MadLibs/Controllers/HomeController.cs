@@ -8,20 +8,20 @@ namespace MadLibs.Controllers
     [Route("/hello")]
     public string Hello() { return "Hello friend"; }
 
-    [Route("/goodbye")]
-    public string GoodBye() { return "Goodbye!"; }
-
     [Route("/")]
-    public ActionResult Body() 
+    public ActionResult Form() { return View(); }
+
+    [Route("/body")]
+    public ActionResult Body(string person1, string person2, string animal, string exclamation, string personal, string verb, string noun) 
     {
       BodyVariable myBodyVariable = new BodyVariable();
-      myBodyVariable.Person1 = "Jeff";
-      myBodyVariable.Person2 = "Jeff";
-      myBodyVariable.Animal = "Jeff";
-      myBodyVariable.Exclamation = "Jeff";
-      myBodyVariable.Personal = "Jeff";
-      myBodyVariable.Verb = "Jeff";
-      myBodyVariable.Noun = "Jeff";
+      myBodyVariable.Person1 = person1;
+      myBodyVariable.Person2 = person2;
+      myBodyVariable.Animal = animal;
+      myBodyVariable.Exclamation = exclamation;
+      myBodyVariable.Personal = personal;
+      myBodyVariable.Verb = verb;
+      myBodyVariable.Noun = noun;
       return View(myBodyVariable); 
     }
   }
