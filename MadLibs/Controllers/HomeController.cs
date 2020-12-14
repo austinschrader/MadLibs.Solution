@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using MadLibs.Models;
 
 namespace MadLibs.Controllers
 {
@@ -11,6 +12,17 @@ namespace MadLibs.Controllers
     public string GoodBye() { return "Goodbye!"; }
 
     [Route("/")]
-    public string Letter() { return "Our MadLib will go here..."; }
+    public ActionResult Body() 
+    {
+      BodyVariable myBodyVariable = new BodyVariable();
+      myBodyVariable.Person1 = "Jeff";
+      myBodyVariable.Person2 = "Jeff";
+      myBodyVariable.Animal = "Jeff";
+      myBodyVariable.Exclamation = "Jeff";
+      myBodyVariable.Personal = "Jeff";
+      myBodyVariable.Verb = "Jeff";
+      myBodyVariable.Noun = "Jeff";
+      return View(myBodyVariable); 
+    }
   }
 }
